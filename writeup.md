@@ -19,6 +19,7 @@ The goals / steps of this project are the following:
 [classes]: ./images/classes.png "Classes"
 [class_distribution]: ./images/class_distribution.png "Class Distribution"
 [preprocessing]: ./images/preprocessing.png "Preprocessing"
+[downloaded]: ./images/downloaded.png "Downloaded"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -126,10 +127,12 @@ neurons.
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![Downloaded Images][downloaded]
 
-The first image might be difficult to classify because ...
+The first three images might be difficutl to classify because they have
+watermarks obscuring signs. I modified the original images by cutting out
+part of image not related to sign, and leaving square region containing
+image of sign.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
