@@ -138,33 +138,81 @@ image of sign.
 
 Here are the results of the prediction:
 
-| Image			        |     Prediction	        					| 
+| Image                 | Prediction                                    |
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Piority Road          | Priority Road                                 |
+| Stop                  | Stop                                          |
+| Keep Right            | Keep Right                                    |
+| Children Crossing     | Children Crossing                             |
+| Yield                 | Yield                                         |
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of 92%.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The code for making predictions on my final model is located in the 16th
+cell of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+For the first image, the model is sure that this is a priority road sign
+(probability of 1.0), and the image does contain a priority road sign. The
+top five soft max probabilities were:
 
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| Probability   | Prediction                                |
+|:-------------:|:-----------------------------------------:|
+| 1.0           | Priority Road                             |
+| 5e-09         | No Vehicles                               |
+| 2e-09         | Keep Right                                |
+| 4e-10         | Children Crossing                         |
+| 3.5e-10       | End of all limits                         |
 
+For the second image, the model is sure that this is a stop sign
+(probability of 0.97), and the image does contain a stop sign. The top five
+soft max probabilities were:
 
-For the second image ... 
+| Probability   | Prediction                                |
+|:-------------:|:-----------------------------------------:|
+| 0.97          | Stop                                      |
+| 0.03          | Priority Road                             |
+| 9e-04         | Right-of-way at the next intersection     |
+| 1e-04         | Keep Right                                |
+| 4e-05         | Beware of ice/snow                        |
+
+For the third image, the model is sure that this is a keep right sign
+(probability of 1.0), and the image does contain a keep right sign. The top
+five soft max probabilities were:
+
+| Probability   | Prediction                                |
+|:-------------:|:-----------------------------------------:|
+| 1.0           | Keep Right                                |
+| 6e-14         | Priority Road                             |
+| 1e-14         | Speed limit 60 km/h                       |
+| 2e-18         | Turn left ahead                           |
+| 7e-19         | Children crossing                         |
+
+For the fourth image, the model is sure that this is a children crossing
+sign (probability of 1.0), and the image does contain a children crossing
+sign. The top five soft max probabilities were:
+
+| Probability   | Prediction                                |
+|:-------------:|:-----------------------------------------:|
+| 1.0           | Children crossing                         |
+| 3e-4          | Right-of-way at the next intersection     |
+| 2e-4          | Dangerous curve to the right              |
+| 3e-5          | End of no passing                         |
+| 9e-6          | Slippery road                             |
+
+For the fifth image, the model is sure that this is a yield sign
+(probability of 1.0), and the image does contain a yield sign. The top five
+soft max probabilities were:
+
+| Probability   | Prediction                                |
+|:-------------:|:-----------------------------------------:|
+| 1.0           | Yield                                     |
+| 2e-22         | Turn right ahead                          |
+| 7e-26         | Turn left ahead                           |
+| 1.5e-26       | Speed limit 60 km/h                       |
+| 1.3e-26       | No passing                                |
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
