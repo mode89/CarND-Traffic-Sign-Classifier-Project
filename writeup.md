@@ -88,26 +88,36 @@ classes. My final model consisted of the following layers:
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used an ....
+To train the model, I used an Adam optimizer, because it's more
+sophisticated than SGD and considered as a good choice for starter. The
+batch size, I selected, is 128. I used exponentially decaying learning rate.
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* training set accuracy of 1.0
+* validation set accuracy of 0.947
+* test set accuracy of 0.924
 
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
-
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+As a starter point, I chosen LeNet-5 archicture, because it was suggested by
+the course lectures. I've started with RGB images. The initial network
+architecture needed to be modified, so that I could be feed it RGB images.
+Also I had to modify the size of the output layer, since in our task we have
+the different amount of classes. This model wasn't able to reach 0.93
+accuracy, that's why later I've implemented grayscale preprocessing and got
+back to the input layer of size 32x32x1. I tried the constant learning
+rate of 0.0001, 0.001 and 0.01, but it didn't help to reach the accuracy of
+0.93. Then I switched to the learning rate exponanentially decaying from
+0.01 to 0.001, and the network was able to reach an accuracy above 0.93 in
+10 training epochs. I think that a convolution layer work well with this
+problem, because it works as a feature detector, and in conjunction with
+max-pooling can detect features of different levels, thus building up a set
+of 2D multi-level features describing an image. The high training accuracy
+and the low validation/testing accuracy indicate that the model is
+overfitting. I think that a dropout layer might help with eliminating
+overfitting. It forces a neural network to learn more robust features that
+are useful in conjunction with many different random subsets of the other
+neurons.
  
 
 ### Test a Model on New Images
